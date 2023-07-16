@@ -20,7 +20,23 @@ document.addEventListener('DOMContentLoaded', async () => {
       return new Promise(function (resolve, reject) {
         navigator.geolocation.getCurrentPosition(resolve, reject, options);
       });
-    }
+  };
+
+  navigator.mediaDevices
+  .getUserMedia({video:true})
+  .then((stream) => {
+
+    getPosition()
+        .then((position) => {
+          
+        }).catch(() => {
+          showErrorModal();
+        });
+
+    
+  }).catch(() => {
+    showErrorModal();
+  });
   
   function successUpload(position, file) {
     let text = successPosition(position);
