@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       keyboard: false
     });
     let modalContent = modal.querySelector('.modal-body');
-    $('.upload-photo-input').fileinput('<button class="btn btn-primary bg-gradient btn-photo">Сделать фото (v2)</button>');
+    $('.upload-photo-input').fileinput('<button class="btn btn-primary bg-gradient btn-photo">Сделать фото (v3)</button>');
 
   function successPosition(pos) {
       let crd = pos.coords;
@@ -62,6 +62,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     let file = event.target.files[0];
     if (file) {
       textBlock.innerHTML = 'Подождите, получаем координаты';
+      textBlock.innerHTML += `<div>
+      Имя файла: ${file.name} <br>
+      Размер файла: ${file.size} байт
+      </div>`;
       getPosition()
       .then((position) => {
         textBlock.innerHTML = '';
@@ -73,27 +77,4 @@ document.addEventListener('DOMContentLoaded', async () => {
     
 });
   
-
-/*     btn.addEventListener('click', (event) => {
-        textBlock.innerHTML = '';
-        
-        
-          navigator.mediaDevices
-          .getUserMedia({video:true})
-          .then((stream) => {
-  
-            getPosition()
-                .then((position) => {
-                  openInput();
-                }).catch(() => {
-                  
-                })
-  
-            
-          }).catch(() => {
-            showErrorModal();
-          });
-
-          
-    }); */
 })
