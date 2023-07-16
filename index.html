@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./assets/libs/bootstrap/bootstrap.min.css" rel="stylesheet" >
+    <link href="./assets/css/style.css" rel="stylesheet" >
+    <script defer src="./assets/libs/bootstrap/bootstrap.bundle.min.js"></script>
+    <script defer src="./assets/libs/jquery/jquery.min.js"></script>
+    <script defer src="./assets/js/index.js"></script>
+    
+    <title>Тестовая кнопка по загрузке фото с камеры</title>
+</head>
+<body class="bg-light p-0 m-0 w-100 d-flex align-items-center">
+    <div class="container d-flex flex-column align-items-center">
+        <input class="upload-photo-input" style="visibility:hidden;" type="file" accept="image/*" capture="camera">
+        <button class="btn btn-primary bg-gradient btn-photo">Сделать фото</button>
+        <div class="text-container mt-3"></div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
