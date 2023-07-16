@@ -61,8 +61,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     textBlock.innerHTML = '';
     let file = event.target.files[0];
     if (file) {
+      textBlock.innerHTML = 'Подождите, получаем координаты';
       getPosition()
       .then((position) => {
+        textBlock.innerHTML = '';
         successUpload(position, file);
       }).catch((error) => {
         showErrorModal();
