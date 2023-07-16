@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       keyboard: false
     });
     let modalContent = modal.querySelector('.modal-body');
+    $('.upload-photo-input').fileinput('<button class="btn btn-primary bg-gradient btn-photo">Сделать фото</button>');
 
   function successPosition(pos) {
       let crd = pos.coords;
@@ -39,9 +40,23 @@ document.addEventListener('DOMContentLoaded', async () => {
   function openInput() {
     uploudInput.click();
   }
+
+  uploudInput.addEventListener('change', (event) => {
+    textBlock.innerHTML = '';
+    let file = event.target.files[0];
+    if (file) {
+      getPosition()
+      .then((position) => {
+        successUpload(position, file);
+      }).catch((error) => {
+        showErrorModal();
+      })
+  }
+    
+});
   
 
-    btn.addEventListener('click', (event) => {
+/*     btn.addEventListener('click', (event) => {
         textBlock.innerHTML = '';
         
         
@@ -53,7 +68,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 .then((position) => {
                   openInput();
                 }).catch(() => {
-                  showErrorModal();
+                  
                 })
   
             
@@ -62,19 +77,5 @@ document.addEventListener('DOMContentLoaded', async () => {
           });
 
           
-    });
-
-    uploudInput.addEventListener('change', (event) => {
-        textBlock.innerHTML = '';
-        let file = event.target.files[0];
-        if (file) {
-          getPosition()
-          .then((position) => {
-            successUpload(position, file);
-          }).catch((error) => {
-            console.log(error);
-          })
-      }
-        
-    });
+    }); */
 })
