@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       keyboard: false
     });
     let modalContent = modal.querySelector('.modal-body');
-    $('.upload-photo-input').fileinput('<button class="btn btn-primary bg-gradient btn-photo">Сделать фото</button>');
+    $('.upload-photo-input').fileinput('<button class="btn btn-primary bg-gradient btn-photo">Сделать фото (v2)</button>');
 
   function successPosition(pos) {
       let crd = pos.coords;
